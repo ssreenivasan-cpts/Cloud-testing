@@ -3,6 +3,7 @@
 <suite name="Suite">
   <test  name="testindev">
     <parameter name="env" value="dev"/>
+     <parameter name="year" value="2019"/>
        <classes>
       <class name="clo.AddaNewReturn"/>
      </classes>

@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite2]">
-  <test thread-count="5" name="testinqa(failed)">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite2]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="RTinqa(failed)">
     <parameter name="env" value="qa"/>
     <classes>
-      <class name="clo.AccountSettings">
+      <class name="clo.ReleaseTesting">
         <methods>
+          <include name="receiveText"/>
+          <include name="login"/>
+          <include name="closeBrowser"/>
           <include name="endReports"/>
+          <include name="startReports"/>
           <include name="teardown"/>
-          <include name="toggleTrainingModeOff"/>
-          <include name="toggleTrainingMode"/>
         </methods>
-      </class> <!-- clo.AccountSettings -->
+      </class> <!-- clo.ReleaseTesting -->
     </classes>
-  </test> <!-- testinqa(failed) -->
+  </test> <!-- RTinqa(failed) -->
 </suite> <!-- Failed suite [Suite2] -->

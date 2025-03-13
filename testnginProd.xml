@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-   <test name="testinprod">
+  <!--  <test name="testinprod">
    <parameter name="env" value="prod"/>
-        <classes>
+   <parameter name="year" value="2019"/>
+     <classes>
        <class name="clo.AddaNewReturn"/>
-    <!--  <class name="clo.AddaNewPreparer"/> -->
+     <class name="clo.AddaNewPreparer"/>
     </classes>
-  </test>
+  </test> -->
+    <test name="PROD1-ADDARETURN">
+   <parameter name="env" value="prod1"/>
+    <parameter name="year" value="2021"/>
+        <classes> 
+       <class name="clo.AddaNewReturn"/>   
+      
+    </classes> 
+  </test> 
 </suite> 

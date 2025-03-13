@@ -1,37 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite1" parallel="tests" thread-count="1">
+<!-- ************QA TESTING************-->
 
-  <test name="testinqa">
-   <parameter name="env" value="qa"/>
-        <classes>
-        <class name="clo.AddaNewReturn"/>
-      <!--  <class name="clo.AddaNewPreparer"/> -->
-    </classes>
-  </test> 
+<suite name="Suite1" parallel="tests" thread-count="1">
+  <listeners>
   
+ <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+  <listener class-name="clo.Listener"/>  
+
+ </listeners>
  
-  <!--  <test name="testinqa1">
-		<parameter name="env" value="qa" />
-		<classes>
-			<class name="clo.LoginPage" />
-			<class name="clo.AccountSettings" />
-			<class name="clo.DatabaseSettings" />
-		</classes>
-		</test>  -->
-		
- <!--  <test name="testinprod">
-   <parameter name="env" value="prod"/>
+   <test name="QA-ADDARETURN">
+   <parameter name="env" value="qa"/>
+    <parameter name="year" value="2024"/>
+    <parameter name="browser" value="chrome"/>
         <classes>
-       <class name="clo.AddaNewReturn"/>
-     <class name="clo.AddaNewPreparer"/>
-    </classes>
-  </test>  -->
+       <class name="clo.AddaNewReturn"/> 
+       </classes>
+  </test>
+    <!-- <test name="QA-ADDARETURN">
+   <parameter name="env" value="qa"/>
+    <parameter name="year" value="2020"/>
+    <parameter name="browser" value="FF"/>
+        <classes>
+            <class name="clo.AddaNewReturn"/> 
+       </classes>
+  </test> -->  
+   <!-- <test name="QA-REFUNDCALCRETURN">
+   <parameter name="env" value="qa"/>
+    <parameter name="year" value="2019"/>
+        <classes>
+        <class name="clo.RefundCalcReturn"/>
+       </classes> 
+   </test>   -->
+  <!-- <test name="QA-ADD/DELETE-PREPARER">	
+   <parameter name="env" value="qa"/>
+    <parameter name="year" value="2023"/>
+        <classes>
+   <class name="clo.AddaNewPreparer"/> 
+    </classes> 
+  </test> -->
+ 
+   <!--     <test name="LOGIN PAGE">
+ 		<parameter name="env" value="qa" />
+		<parameter name="year" value="2024"/>
+		<classes>
+	<class name="clo.LoginPage" />
+		  <class name="clo.AccountSettings" /> 
+			<class name="clo.DatabaseSettings" />  -->
+		   		<!-- <class name="clo.SSBaccountsettings" />
+		   	 	 <class name="clo.Validations"/>
+	</classes> 
+		</test>  --> 
+<!--  <test name="PROD-ADDARETURN">
+   <parameter name="env" value="prod1"/>
+        <classes> 
+       <class name="clo.AddaNewReturn"/>   
+      </classes> 
+  </test>   -->
     
-  <!-- <test  name="testindev">
-    <parameter name="env" value="dev"/>
+  
+ <!-- <test  name="DEV-ADDARETURN">
+     <parameter name="env" value="dev"/>
+      <parameter name="year" value="2019"/>
        <classes>
       <class name="clo.AddaNewReturn"/>
      </classes>
-  </test>  --> 
-</suite>
+  </test> -->
+</suite> 

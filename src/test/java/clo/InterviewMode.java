@@ -41,7 +41,7 @@ public class InterviewMode extends Base {
 		im.clickintviconpgNextbtn().click();
 		//---------
 		im.clickintvMFJbox().click();
-		im.clickintvFSpgNextbtn().click();
+		im.clickintvFSpgNextbtn_19().click();
 		//
 		im.getintvTPfirstname().sendKeys("AUTO");
 		im.getintvTPlastname().sendKeys("Lastname");
@@ -52,7 +52,7 @@ public class InterviewMode extends Base {
 		im.getintvSPlastname().sendKeys("Lastname");
 		im.getintvSPdob().sendKeys("05121982");
 		im.getintvSPoccupation().sendKeys("HomeMaker");
-		im.clickintvperinfopgNextbtn().click();
+		im.clickintvperinfopgNextbtn18().click();//next btn for 2018
 		//
 		im.getintvusaddress().sendKeys("12 leo st");
 		AltplusC("zipcode", im.getintvzip());
@@ -76,7 +76,7 @@ public class InterviewMode extends Base {
 		w2.getwages().sendKeys("25000");
 		w2.getFedtax().sendKeys("5000");
 		//address?
-		im.clickintvW2frmNextbtn().click();
+		im.clickintvW2frmNextbtn19().click();
 		im.clickintvtypofincNextbtn().click();
 		im.clickintvadjustmentspgNextbtn().click();
 		im.clickintvcreditspgNextbtn().click();

@@ -19,7 +19,12 @@ public class FRMW2PO {
 	}
 	
 	By wages = By.id("012000");
+	By dbleentryWages = By.id("dblindTextField");
+	By okindblentryWages = By.xpath("//span[contains(text(),'Ok')]");
+	By cancelindblentryWages =By.xpath("//span[contains(text(),'Cancel')]");
 	By Fedtax = By.id("013000");
+	By okindblentryFedTax = By.xpath("//span[contains(text(),'Ok')]");
+	By cancelindblentryFedTax =By.xpath("//span[contains(text(),'Cancel')]");
 	By ein = By.id("004000");
 	By Employername = By.id("005000");
 	By Empaddrs = By.id("006000");
@@ -32,9 +37,33 @@ public class FRMW2PO {
 	{
 		return driver.findElement(wages);
 	}
+	public WebElement getdbleentryWages()
+	{
+		return driver.findElement(dbleentryWages);
+	}
+	public WebElement clkokindblentryWages()
+	{
+		return driver.findElement(okindblentryWages);
+	}
+	public WebElement clkcancelindblentryWages()
+	{
+		return driver.findElement(cancelindblentryWages);
+	}
 	public WebElement getFedtax()
 	{
 		return driver.findElement(Fedtax);
+	}
+	public WebElement getdbleentryFedTax()
+	{
+		return driver.findElement(dbleentryWages);
+	}
+	public WebElement clkokindblentryFedTax()
+	{
+		return driver.findElement(okindblentryFedTax);
+	}
+	public WebElement clkcancelindblentryFedTax()
+	{
+		return driver.findElement(cancelindblentryFedTax);
 	}
 	public WebElement getein()
 	{

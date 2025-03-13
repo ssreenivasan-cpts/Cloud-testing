@@ -1,16 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>dec18</groupId>
-  <artifactId>Cloud-testing</artifactId>
+  <artifactId>Prod-testing</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 <build>
    
     <plugins>
-       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M3</version>
+   
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M7</version>
+       
+      
         <configuration>
+        
           <suiteXmlFiles>
              <suiteXmlFile>testng.xml</suiteXmlFile>
           <!--   <suiteXmlFile>testng1.xml</suiteXmlFile> -->
@@ -18,17 +22,30 @@
             <!-- <suiteXmlFile>testnginProd.xml</suiteXmlFile> -->
           </suiteXmlFiles>
         </configuration>
-      </plugin>
-   
+        
+   </plugin> 
 </plugins>
-  
+ 
   </build>
 <dependencies>
+
+    <!-- more dependencies ... -->
+    <dependency>
+       <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.0.0</version>
+    </dependency>
+   
+    <!-- more dependencies ... -->
 <dependency>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.8.0</version>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-compiler-plugin</artifactId>
+  <version>3.10.1</version>
+  <type>maven-plugin</type>
 </dependency>
+
+
+
 
 <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
 <dependency>
@@ -43,18 +60,31 @@
     <version>3.1.5</version>
 </dependency> -->
 
-<dependency>
+<!-- <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>2.53.0</version>
-</dependency>
+    <version>3.141.59</version>
+</dependency> -->
  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>6.14.3</version>
-   <scope>compile</scope> 
+  <groupId>org.testng</groupId>
+  <artifactId>testng</artifactId>
+  <version>7.6.0</version>
 </dependency>
+
+
+<!-- <dependency>
+  <groupId>org.testng</groupId>
+  <artifactId>testng</artifactId>
+  <version>6.8</version>S
+  <scope>test</scope>
+</dependency> -->
+<dependency>
+  <groupId>com.google.guava</groupId>
+  <artifactId>guava</artifactId>
+  <version>24.0-jre</version>
+</dependency>
+
 
 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 <dependency>
@@ -93,7 +123,104 @@
     <version>1.0.0</version>
     <scope>compile</scope>
 </dependency>
-  
+
+<dependency>
+    <groupId>org.uncommons</groupId>
+    <artifactId>reportng</artifactId>
+    <version>1.1.4</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
+<dependency>
+    <groupId>com.google.inject</groupId>
+    <artifactId>guice</artifactId>
+    <version>4.2.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>mail</artifactId>
+    <version>1.4.7</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-client</artifactId>
+    <version>2.6.0</version>
+</dependency>
+
+<!-- <dependency>
+  		 <groupId>com.microsoft.sqlserver</groupId>
+   		 <artifactId>mssql-jdbc</artifactId>
+   		 <version>6.5.2.jre9-preview</version>
+   		 <scope>test</scope>
+	</dependency> -->
+	<dependency>
+  <groupId>com.microsoft.sqlserver</groupId>
+  <artifactId>mssql-jdbc</artifactId>
+  <version>8.4.1.jre8</version>
+</dependency>
+<!-- <dependency>
+    <groupId>com.applitools</groupId>
+    <artifactId>eyes-selenium-java3</artifactId>
+    <version>RELEASE</version>
+</dependency> -->
+<dependency>
+  <groupId>com.applitools</groupId>
+  <artifactId>eyes-selenium-java3</artifactId>
+  <version>3.212.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
+<dependency>
+    <groupId>com.itextpdf</groupId>
+    <artifactId>itextpdf</artifactId>
+    <version>5.5.13</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+
+   <dependency>
+       <groupId>org.slf4j</groupId>
+       <artifactId>slf4j-simple</artifactId>
+       <version>1.6.4</version>
+   </dependency>
+   <!-- https://mvnrepository.com/artifact/com.google.zxing/core -->
+<dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>31.0.1-jre</version>
+    </dependency>
+<!--qrcoe depeneny-->
+ <dependency>
+    <groupId>com.google.zxing</groupId>
+    <artifactId>core</artifactId>
+    <version>3.3.0</version>
+</dependency>
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.3.2</version> 
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.codehaus.plexus/plexus-logging -->
+<dependency>
+    <groupId>org.codehaus.plexus</groupId>
+    <artifactId>plexus-logging</artifactId>
+    <version>1.0.4</version>
+    <type>pom</type>
+</dependency>
+<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
+<dependency>
+    <groupId>ru.yandex.qatools.ashot</groupId>
+    <artifactId>ashot</artifactId>
+    <version>1.5.4</version>
+</dependency>
+
+
+
+
 
   </dependencies>
+  <properties>
+   <maven.compiler.source>17</maven.compiler.source>
+   <maven.compiler.target>17</maven.compiler.target>
+ </properties>
 </project>

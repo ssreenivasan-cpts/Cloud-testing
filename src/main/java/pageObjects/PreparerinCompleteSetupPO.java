@@ -34,17 +34,17 @@ public class PreparerinCompleteSetupPO {
 	By EIN = By.id("txtEINNewPreparer");
 	By FirmAddress = By.id("txtFirmAddressNewPreparer");
 	By City = By.id("txtCityNewPreparer");
-	By State = By.id("ddlStateNewPreparer");
+	By State = By.id("ddlStateNewPreparer-npState");
 	By Zip = By.id("txtZipNewPreparer");
 	By Officeph = By.id("txtOfficePhoneNewPreparer");
 	By EFINID = By.id("txtEFINNewPreparer");
 	By AddNewPrep = By.id("btnAddNewPreperarer");
 	By ErrortoNewPrep = By.id("confirm-delete-title");
 	By ErrorDesc = By.id("confirm-delete-desc");
-	By DonebtninError = By.id("btnHideSettingsError");
-	By Delete_btnexecuteaction3 =By.xpath("//button[@id='btnExecuteAction4'][1]");
-			//By.id("btnExecuteAction4");
+	By DonebtninError = By.id("btnHideSettingsError");//ok button in Error
+	By Delete_btnexecuteaction3 =By.xpath("//button[@id='btnExecuteDelete6']");
 	By ConfirminDeletePrep = By.id("btnConfirmDialog");
+	By CancelbtninCreateanewprep = By.id("btnCancelNewPreparer");
 	By Closebtn = By.id("btnSaveAndCloseSettingsProfile");
 	
 	public WebElement clkAddNewbtn()
@@ -154,5 +154,13 @@ public class PreparerinCompleteSetupPO {
 	public WebElement clickClosebtn()
 	{
 		return driver.findElement(Closebtn);
+	}
+	public WebElement clickCancelbtninCreateanewprep()
+	{
+		return driver.findElement(CancelbtninCreateanewprep);
+	}
+	public WebElement clickConfirminDeletePrep()
+	{
+		return driver.findElement(ConfirminDeletePrep);
 	}
 }

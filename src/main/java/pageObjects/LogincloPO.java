@@ -27,6 +27,8 @@ public class LogincloPO {
 	By rememberPassword = By.id("chkRememberMeLogin");
 	By seccontbtn = By.id("btnContinueMFAMethod"); 
 	By markaspublic = By.id("markAsPublic");
+	By confirmationkey = By.id("txtConfirmKey");
+	By pwdexpireCancelbtn =By.id("btnCancelDialog");
 	By verificationCode = By.xpath("//*[@id=\"mfaEnterCodeContainer\"]/div/div/div[2]/form/div[2]/div/input");
 			//*[@id='loginContainer']/div/div/div[2]/form/div[2]/div/input");
 			//("//input[@type='text'])[0]");
@@ -58,9 +60,17 @@ public class LogincloPO {
 	{
 		return driver.findElement(seccontbtn);
 	}
+	public WebElement clickpwdexpireCancelbtn()
+	{
+		return driver.findElement(pwdexpireCancelbtn);
+	}
 	public WebElement clickmarkaspublic()
 	{
 		return driver.findElement(markaspublic);
+	}
+	public WebElement clickconfirmationkey()
+	{
+		return driver.findElement(confirmationkey);
 	}
 	public WebElement getverificationCode()
 	{

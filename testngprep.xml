@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="rough.Chromeprofiling"/>
+      <class name="rough.Officesetup"/>
+      <class name="clo.LoginPage"/>
+      <class name="clo.SSBaccountsettings"/>
+      <class name="clo.DatabaseSettings"/>
+      <class name="rough.DeleteaPreparer"/>
+      <class name="clo.AccountSettings"/>
+      <class name="clo.InterviewMode"/>
+      <class name="rough.Dbconnection"/>
+      <class name="rough.AddaNewReturn2"/>
+      <class name="rough.LoginClo"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

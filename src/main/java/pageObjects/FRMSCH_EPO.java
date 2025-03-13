@@ -18,13 +18,19 @@ public class FRMSCH_EPO {
 		this.driver=driver;
 	}
 	
+	By payments_Question = By.id("000700");
 	By A_streetaddr = By.id("837200");
 	By A_zip = By.id("837800");
 	By A_proptype = By.id("002500");
 	By A_numofdays = By.id("004300");
 	By A_QBI = By.id("880000");
-	By MortInterest = By.id("035000");
+	By MortInterest = By.id("035000");//id changed in 2019.not using
+	By Repairs = By.id("042000");
 	
+	public WebElement getpayments_Question()
+	{
+		return driver.findElement(payments_Question);
+	}
 	public WebElement getA_streetaddr()
 	{
 		return driver.findElement(A_streetaddr);
@@ -48,6 +54,10 @@ public class FRMSCH_EPO {
 	public WebElement getMortInterest()
 	{
 		return driver.findElement(MortInterest);
+	}
+	public WebElement getRepairs()
+	{
+		return driver.findElement(Repairs);
 	}
 	
 	

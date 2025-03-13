@@ -1,21 +1,22 @@
 package clo;
 
-
-
 import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.relevantcodes.extentreports.LogStatus;
 import pageObjects.AccountSettingsPO;
+import pageObjects.AddaReturnpgPO;
 import pageObjects.DatabaseSettingsPO;
 import pageObjects.LogincloPO;
 import pageObjects.OverviewpgPO;
@@ -25,52 +26,35 @@ public class DatabaseSettings extends Base {
 	Logger logger= LogManager.getLogger(getClass());
 	public WebDriver driver;
 	
-	@Parameters("env")
 	@Test(priority =22)
-	public void dbAddCity(String env) throws IOException, InterruptedException
+	public void dbAddCity() throws IOException, InterruptedException
 	{
-		try {
-		driver = invokeBrowser(env);
-		driver.get("https://qa.crosslinkonline.com/#");
-		LogincloPO lp = new LogincloPO(driver);
-		OverviewpgPO op = new OverviewpgPO(driver);
-		lp.getusername().sendKeys("000334");
-		lp.getPassword().sendKeys("P@ssword1");
-		Thread.sleep(1000);
-		lp.clickLogin().click();
-		lp.clicksecLogin().click();
-		lp.clickmarkaspublic().click();
-		lp.clickthrdcontbtn().click();
-	  //  lp.clickcontbtnIRS().click();
-	    //lp.clickcanceltour().click();
-		Thread.sleep(2000);
-	    op.clickoverview().click();
-	    Thread.sleep(1000);
-		AccountSettingsPO ap = new AccountSettingsPO(driver);
-		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);
-		Thread.sleep(2000);
-		ap.clickaccountsdropdown().click();
-		Thread.sleep(1000);
-		dp.clickdatabaselink().click();
+		
+		  //Thread.sleep(1000);
+		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
+		goToDatabase();
+		Thread.sleep(500);
 		dp.clickcitieszipcodeslink().click();
 		dp.clickaddnewbtn().click();
 		dp.clickcitieszipcodetxtbox().sendKeys("12345");
 		dp.clickcitiescitytxtbox().sendKeys("Test City");
 		dp.clickcitiesstatecodetxtbox().sendKeys("CA");
 		dp.clickcitiesaddbtn().click();
+		//Thread.sleep(1000);
+		//dp.clicksearchfield().sendKeys("12345");
+		//WebElement testzip = driver.findElement(By.xpath("//tr/td[text() = '12345']"));
+		//assertTrue(testzip.contains("12345"));
+		//System.out.println("New city added");
 		logger.info("New city added");
 		test.log(LogStatus.INFO,"New city added");
 		}
-		catch(Exception e) {
-			logger.error("Error in Add DB city" + e);
-			test.log(LogStatus.ERROR, "Error in Add DB City");
-		}
-		}
+	
+		
 	
 	@Test(priority = 23)
 	public void dbEditCity() throws IOException, InterruptedException
 	{
-		try {
+		
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickeditbtn().click();
@@ -78,22 +62,21 @@ public class DatabaseSettings extends Base {
 		dp.clickcitieszipcodetxtbox().sendKeys("12346");
 		dp.clickcitiescitytxtbox().clear();
 		dp.clickcitiescitytxtbox().sendKeys("Test City Edited");
+		Thread.sleep(1000);
 		dp.clickcitiesaddbtn().click();
 		logger.info("City Edited Sucessfully");
 		test.log(LogStatus.INFO,"City Edited Sucessfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in Edit DB city" + e);
-			test.log(LogStatus.ERROR, "Error in Edit DB City");
-		}
-		
-		}
+			}
 	
 	@Test(priority = 24)
 	public void dbDeleteCity() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
+		//dp.clickdatabaseclosebtn().click();
+		//switchto2018();
+		//goToDatabase();
+		dp.clickcitieszipcodeslink().click();
+		//dp.getfirstTestCityAdded().getText().compareTo("TEST CITY EDITED,CA");
 		Actions act = new Actions(driver);
 		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
 		Thread.sleep(1000);
@@ -103,17 +86,55 @@ public class DatabaseSettings extends Base {
 		logger.info("City Deleted Successfully");
 		test.log(LogStatus.INFO,"City Deleted Successfully");
 		}
-		catch(Exception e) {
-			logger.error("Error in Delete DB city" + e);
-			test.log(LogStatus.ERROR, "Error in Delete DB City");
-		}
 	
+	private void switchto2018() throws InterruptedException {
+			AccountSettingsPO ap = new AccountSettingsPO(driver);
+			Wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//	Thread.sleep(2000);
+			Wait.until(ExpectedConditions.elementToBeClickable(ap.clickaccountsdropdown()));
+			ap.clickaccountsdropdown().click();
+			Wait.until(ExpectedConditions.elementToBeClickable(ap.clickswitchlink()));
+			ap.clickswitchlink().click();
+			Wait.until(ExpectedConditions.elementToBeClickable(ap.clickswitchselectyeardropdown()));
+			ap.clickswitchselectyeardropdown().click();
+			ap.clickswitchoptionyear2018().click();
+			ap.clickswitchbtn().click();
+			logger.info("Switched back to the year 2018");
+			test.log(LogStatus.INFO,"Switched back to the year 2018");
+			}
+	
+	private void switchto2019() throws InterruptedException {
+		AccountSettingsPO ap = new AccountSettingsPO(driver);
+		Wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	//	Thread.sleep(2000);
+		Wait.until(ExpectedConditions.elementToBeClickable(ap.clickaccountsdropdown()));
+		ap.clickaccountsdropdown().click();
+		Wait.until(ExpectedConditions.elementToBeClickable(ap.clickswitchlink()));
+		ap.clickswitchlink().click();
+		Wait.until(ExpectedConditions.elementToBeClickable(ap.clickswitchselectyeardropdown()));
+		ap.clickswitchselectyeardropdown().click();
+		ap.clickswitchoptionyear2019().click();
+		ap.clickswitchbtn().click();
+		logger.info("Switched back to the year 2019");
+		test.log(LogStatus.INFO,"Switched back to the year 2019");
+		}
+	private void goToDatabase() throws InterruptedException
+	{
+		AccountSettingsPO ap = new AccountSettingsPO(driver);
+		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);
+		Thread.sleep(1000);
+		//ap.clickaccountsdropdown().click(); //notworking
+		//Thread.sleep(1000);
+	//	dp.clickdatabaselink().click();
+		ap.clickaccountsettingsbtn().click();
+		ap.clickdbsettingsbtn().click();
+		
 	}
 	
 	@Test(priority = 25)
 	public void dbaddEmployer() throws IOException, InterruptedException
 	{
-		try {
+		
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickemployerspayerslink().click();
@@ -128,19 +149,16 @@ public class DatabaseSettings extends Base {
 		dp.clickempzipcodetxtbx().sendKeys("95304");
 		dp.clickempstate1identftxtbx().sendKeys("123456789");
 		dp.clickempsavebtn().click();
+		//System.out.println(" New Employer added Successfully");
 		logger.info("New Employer added Successfully");
 		test.log(LogStatus.INFO,"New Employer added Successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in Add DB Employer" + e);
-			test.log(LogStatus.ERROR, "Error in Add DB Employer");
-		}
+		
 	}
 	
 	@Test(priority = 26)
 	public void dbeditEmployer() throws IOException, InterruptedException
 	{
-		try {
+		
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickeditbtn().click();
@@ -152,22 +170,26 @@ public class DatabaseSettings extends Base {
 		dp.clickempcompanyname().sendKeys("Automation company Update");
 		dp.clickempcompanyaddress().clear();
 		dp.clickempcompanyaddress().sendKeys("7576 Linne Rd");
+		dp.clickempcitytxtbx().sendKeys("Tracy");
+		dp.clickempstatetxtbx().click();
+		dp.clickempCAstatetxtbx().click();
+		dp.clickempzipcodetxtbx().sendKeys("95304");
 		dp.clickempsavebtn().click();
 		logger.info("New Employer Editted Successfully");
 		test.log(LogStatus.INFO,"New Employer Editted Successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in Edit DB Employer" + e);
-			test.log(LogStatus.ERROR, "Error in Edit DB Employer");
-		}
+		
 	}
 	
 	@Test(priority = 27)
 	public void dbDeleteEmployer() throws IOException, InterruptedException
 	{
-		try {
+	
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
+		/*dp.clickdatabaseclosebtn().click();
+		switchto2019();
+		goToDatabase();*/
+		dp.clickemployerspayerslink().click();
 		Actions act = new Actions(driver);
 		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
 		act.moveToElement(driver.findElement(By.cssSelector("#anchorDeleteButton"))).click().perform();
@@ -175,17 +197,13 @@ public class DatabaseSettings extends Base {
 		dp.clickcitiesdeletemodaldelbtn().click();
 		logger.info("Employer Deleted Successfully");
 		test.log(LogStatus.INFO,"Employer Deleted Successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in Delete DB Employer" + e);
-			test.log(LogStatus.ERROR, "Error in Delete DB Employer");
-		}
+		
 }
 	
 	@Test(priority = 28)
 	public void dbaddCareProvider() throws IOException, InterruptedException
 	{
-		try {
+		
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickcareproviderslink().click();
@@ -193,7 +211,8 @@ public class DatabaseSettings extends Base {
 		dp.clickprovidercode().sendKeys("11111111");
 		dp.clickprovidertype().sendKeys("Test type");
 		dp.clickprovidernamecontrol().sendKeys("Proctrl");
-		dp.clickcareprovidername().sendKeys("Test Careprovider");
+		dp.clickcareprovidername().sendKeys("Test Careprovider");   
+		dp.clickcareproviderphnum().sendKeys("2098857252");
 		dp.clickprovideradd().sendKeys("128 Indigo dr");
 		dp.clickprovidercity().sendKeys("Mountain House");
 		dp.clickproviderstate().click();
@@ -202,17 +221,13 @@ public class DatabaseSettings extends Base {
 		dp.clickprovidersavebtn().click();
 		logger.info("New Care provider added successfully");
 		test.log(LogStatus.INFO,"New Care provider added successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Add DB Care Provider" + e);
-			test.log(LogStatus.ERROR, "Error in Add DB Care Provider");
-		}
+		
 		}
 	
 	@Test(priority = 29)
 	public void dbeditCareProvider() throws IOException, InterruptedException
 	{
-		try {
+		
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickeditbtn().click();
@@ -221,41 +236,42 @@ public class DatabaseSettings extends Base {
 		dp.clickcareprovidername().clear();
 		dp.clickcareprovidername().sendKeys("NameUpdated Careprovider");
 		dp.clickprovideradd().sendKeys("128 ritta dr");
+		dp.clickprovidercity().sendKeys("Mountain House");
+		dp.clickproviderstate().click();
+		dp.clickproviderCAstate().click();
+		dp.clickproviderzipcode().sendKeys("95391");
 		dp.clickprovidersavebtn().click();
 		logger.info("Care provider editted successfully");
 		test.log(LogStatus.INFO,"Care provider editted successfully");
+		
 		}
-		catch(Exception e) {
-			logger.error("Error in  Edit DB Care Provider" + e);
-			test.log(LogStatus.ERROR, "Error in Edit DB Care Provider");
-		}
-		}
-	
-	
+		
 	@Test(priority = 30)
 	public void dbDeleteCareProvider() throws IOException, InterruptedException
 	{
-		try {
+		
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
+		/*dp.clickdatabaseclosebtn().click();
+		switchto2018();
+		goToDatabase();*/
+		dp.clickcareproviderslink().click();
 		Actions act = new Actions(driver);
 		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
+		//dp.clickthreedots().click();
 		act.moveToElement(driver.findElement(By.cssSelector("#anchorDeleteButton"))).click().perform();
+		//dp.clickcitiesdeletebtn().click();
+		//assertTrue(dp.clickcitiesdeltitle().getText().contains("Test City Edited,CA"));
 		Thread.sleep(1000);
 		dp.clickcitiesdeletemodaldelbtn().click();
 		logger.info("Care Provider Deleted Successfully");
 		test.log(LogStatus.INFO,"Care Provider Deleted Successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Delete DB Care Provider" + e);
-			test.log(LogStatus.ERROR, "Error in Delete DB Care Provider");
-		}
+		
 	}
 		
 	@Test(priority = 31)
 	public void dbaddReferrals() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickreferralslink().click();
@@ -264,63 +280,55 @@ public class DatabaseSettings extends Base {
 		dp.clickreferralsaddbtn().click();
 		logger.info("Refferrals added successfully");
 		test.log(LogStatus.INFO,"Refferrals added successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Add DB Referrals" + e);
-			test.log(LogStatus.ERROR, "Error in Add DB Referrals");
-		}
 	}
 	
-	@Test(priority = 32)
+	//@Test(priority = 32)
 	public void dbeditReferrals() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickeditbtn().click();
 		dp.clickreferralsname().clear();
-		dp.clickreferralsname().sendKeys("Refferals Updated");
+		dp.clickreferralsname().sendKeys("12354");
 		dp.clickreferralsaddbtn().click();
 		logger.info(" Refferrals editted successfully");
 		test.log(LogStatus.INFO,"Refferrals editted successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Edit DB Referrals" + e);
-			test.log(LogStatus.ERROR, "Error in Edit DB Referrals");
-		}
+		
 	}
 	
 	@Test(priority = 33)
 	public void dbDeleteReferrals() throws IOException, InterruptedException
 	{
-		try {
+	
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
+		/*dp.clickdatabaseclosebtn().click();
+		switchto2019();
+		goToDatabase();*/
+		dp.clickreferralslink().click();
+		//WebElement frstRow = driver.findElement(By.xpath("//tr/td[text() = 'Test City Edited,CA']"));
 		Actions act = new Actions(driver);
 		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
+		//dp.clickthreedots().click();
 		act.moveToElement(driver.findElement(By.cssSelector("#anchorDeleteButton"))).click().perform();
+		//dp.clickcitiesdeletebtn().click();
+		//assertTrue(dp.clickcitiesdeltitle().getText().contains("Test City Edited,CA"));
 		Thread.sleep(1000);
 		dp.clickcitiesdeletemodaldelbtn().click();
-		WebElement donebtn = driver.findElement(By.id("btnHideSettingsError"));
-		if(donebtn.isDisplayed())
+		//WebElement donebtn = driver.findElement(By.id("btnHideSettingsError"));
+		
+		/*if(donebtn.isDisplayed())
 		{
 			donebtn.click();
-		}
+		}*/
 		logger.info(" Referrals Deleted Successfully");
 		test.log(LogStatus.INFO,"Referrals Deleted Successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Delete DB Referrals" + e);
-			test.log(LogStatus.ERROR, "Error in Delete DB Referrals");
-		}
-	}
-		
 	
+	}
+
 	@Test(priority = 34)
 	public void dbaddDonee() throws IOException, InterruptedException
 	{
-		
-		try{
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickdoneelink().click();
@@ -335,17 +343,12 @@ public class DatabaseSettings extends Base {
 		dp.clickdoneesavebtn().click();
 		logger.info(" Donee added successfully");
 		test.log(LogStatus.INFO,"Donee added successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Add DB Donee" + e);
-			test.log(LogStatus.ERROR, "Error in Add DB Donee");
-		}
+		
 	}
 	
 	@Test(priority = 35)
 	public void dbeditDonee() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickeditbtn().click();
@@ -357,64 +360,57 @@ public class DatabaseSettings extends Base {
 		dp.clickdoneeadd().sendKeys("1111 Updated Street");
 		dp.clickdoneecity().clear();
 		dp.clickdoneecity().sendKeys("Updated City");
+		dp.clickdoneestate().click();
+		dp.clickdoneeCAstate().click();
+		dp.clickdoneezipcode().sendKeys("91119");
 		dp.clickdoneesavebtn().click();
 		logger.info(" Donee editted successfully");
 		test.log(LogStatus.INFO,"Donee editted successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Edit DB Donee" + e);
-			test.log(LogStatus.ERROR, "Error in Edit DB Donee");
-		}
 		
 	}
 	
 	@Test(priority = 36)
 	public void dbDeleteDonee() throws IOException, InterruptedException
 	{
-		try {
-	
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
+		/*dp.clickdatabaseclosebtn().click();
+		switchto2018();
+		goToDatabase();*/
+		dp.clickdoneelink().click();
+		//WebElement frstRow = driver.findElement(By.xpath("//tr/td[text() = 'Test City Edited,CA']"));
 		Actions act = new Actions(driver);
 		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
+		//dp.clickthreedots().click();
 		act.moveToElement(driver.findElement(By.cssSelector("#anchorDeleteButton"))).click().perform();
+		//WebElement delbtn = driver.findElement(By.xpath("//*[@id='action-menu']/div[2]/ul/li/text())"));
+		//dp.clickcitiesdeletebtn().click();
+		//assertTrue(dp.clickcitiesdeltitle().getText().contains("Test City Edited,CA"));
 		Thread.sleep(1000);
 		dp.clickcitiesdeletemodaldelbtn().click();
 		logger.info(" Donee Deleted Successfully");
 		test.log(LogStatus.INFO,"Donee Deleted Successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Delete DB Donee" + e);
-			test.log(LogStatus.ERROR, "Error in Delete DB Donee");
-		}
-	}
 		
+	}
 	
 	@Test(priority = 37)
 	public void dbaddBankRTN() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickbankrtnslink().click();
 		dp.clickaddnewbtn().click();
-		dp.clickbankrtn().sendKeys("111111111");
+		dp.clickbankrtn().sendKeys("000111111111");
 		dp.clickbankname().sendKeys("Automation Bank");
-		Wait.until(ExpectedConditions.elementToBeClickable(dp.clickbanksavebtn()));
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		dp.clickbanksavebtn().click();
 		logger.info(" Bank RTN added successfully");
 		test.log(LogStatus.INFO,"Bank RTN added successfully");
-	}
-	catch(Exception e) {
-		logger.error("Error in  Add DB Bank RTN" + e);
-		test.log(LogStatus.ERROR, "Error in Add DB Bank RTN");
-	}
 	}
 	
 	@Test(priority = 38)
 	public void dbeditBankRTN() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickeditbtn().click();
@@ -425,38 +421,37 @@ public class DatabaseSettings extends Base {
 		dp.clickbanksavebtn().click();
 		logger.info(" Bank RTN editted successfully");
 		test.log(LogStatus.INFO,"Bank RTN editted successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Edit DB Bank RTN" + e);
-			test.log(LogStatus.ERROR, "Error in Edit DB Bank RTN");
-		}
-			
+	
 	}
 	
 	@Test(priority = 39)
 	public void dbDeleteBankRTN() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
+		/*dp.clickdatabaseclosebtn().click();
+		switchto2019();
+		goToDatabase();*/
+		dp.clickbankrtnslink().click();
+		//WebElement frstRow = driver.findElement(By.xpath("//tr/td[text() = 'Test City Edited,CA']"));
 		Actions act = new Actions(driver);
 		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
+		//dp.clickthreedots().click();
 		act.moveToElement(driver.findElement(By.cssSelector("#anchorDeleteButton"))).click().perform();
+		//WebElement delbtn = driver.findElement(By.xpath("//*[@id='action-menu']/div[2]/ul/li/text())"));
+		//dp.clickcitiesdeletebtn().click();
+		//assertTrue(dp.clickcitiesdeltitle().getText().contains("Test City Edited,CA"));
 		Thread.sleep(1000);
 		dp.clickcitiesdeletemodaldelbtn().click();
 		logger.info("Bank RTN Deleted Successfully");
 		test.log(LogStatus.INFO,"Bank RTN Deleted Successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Delete DB Bank RTN" + e);
-			test.log(LogStatus.ERROR, "Error in Delete DB Bank RTN");
-		}
+		
 	}
 		
 	@Test(priority = 40)
 	public void dbaddOccupations() throws IOException, InterruptedException
 	{
-		try {
+		
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickoccupationslink().click();
@@ -465,18 +460,12 @@ public class DatabaseSettings extends Base {
 		dp.clickoccupationaddbtn().click();
 		logger.info("New Occupation added successfully");
 		test.log(LogStatus.INFO,"New Occupation added successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Add DB Occupations" + e);
-			test.log(LogStatus.ERROR, "Error in Add DB Occupations");
-		}
-	 
+ 
 	}
 	
 	@Test(priority = 41)
 	public void dbeditOccupations() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickeditbtn().click();
@@ -485,20 +474,65 @@ public class DatabaseSettings extends Base {
 		dp.clickoccupationaddbtn().click();
 		logger.info("Occupation  editted successfully");
 		test.log(LogStatus.INFO,"Occupation  editted successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Edit DB Occupations" + e);
-			test.log(LogStatus.ERROR, "Error in Edit DB Occupations");
-		}
 	}	
 	
 	
-@Test(priority = 42)
+	@Test(priority = 42)
 	public void dbDeleteOccupations() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
+		/*dp.clickdatabaseclosebtn().click();
+		switchto2018();
+		goToDatabase();*/
+		dp.clickoccupationslink().click();
+		//WebElement frstRow = driver.findElement(By.xpath("//tr/td[text() = 'Test City Edited,CA']"));
+		Actions act = new Actions(driver);
+		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
+		act.moveToElement(driver.findElement(By.cssSelector("#anchorDeleteButton"))).click().perform();
+		Thread.sleep(1000);
+		dp.clickcitiesdeletemodaldelbtn().click();
+		logger.info("Occupations Deleted Successfully");
+		test.log(LogStatus.INFO,"Occupations Deleted Successfully");
+
+	}
+		
+	@Test(priority = 43)
+	public void dbaddSiteIdentifiers() throws IOException, InterruptedException
+	{
+		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
+		Thread.sleep(1000);
+		dp.clicksiteidentifierlink().click();
+		dp.clickaddnewbtn().click();
+		dp.getsitecode().sendKeys("AAACODE");
+		dp.getsitedescription().sendKeys("Automation");
+		dp.clicksiteidentifieraddbtn().click();
+		logger.info("New Site Identifier added successfully");
+		test.log(LogStatus.INFO,"New Site Identifier added successfully");
+		
+	}
+	
+	@Test(priority = 44)
+	public void dbeditSiteIdentifiers() throws IOException, InterruptedException
+	{
+		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
+		Thread.sleep(1000);
+		dp.clicksiteidentifierlink().click();
+		dp.clickeditbtn().click();
+		dp.getsitecode().clear();
+		dp.getsitecode().sendKeys("AAAedited");
+		dp.getsitedescription().sendKeys("Edited");
+		dp.clicksiteidentifieraddbtn().click();
+		logger.info("New Site Identifier edited successfully");
+		test.log(LogStatus.INFO,"New Site Identifier added successfully");
+		
+	}
+	@Test(priority = 45)
+	public void dbdeleteSiteIdentifiers() throws IOException, InterruptedException
+	{
+		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
+		Thread.sleep(1000);
+		dp.clicksiteidentifierlink().click();
 		Actions act = new Actions(driver);
 		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
 		act.moveToElement(driver.findElement(By.cssSelector("#anchorDeleteButton"))).click().perform();
@@ -507,16 +541,50 @@ public class DatabaseSettings extends Base {
 		logger.info("Occupations Deleted Successfully");
 		test.log(LogStatus.INFO,"Occupations Deleted Successfully");
 	}
-	catch(Exception e) {
-		logger.error("Error in  Delete DB Occupations" + e);
-		test.log(LogStatus.ERROR, "Error in Delete DB Occupations");
+	@Test(priority = 46)
+	public void dbaddUserStatusCode() throws InterruptedException 
+	{
+		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(1000);
+		dp.clickuserstatuscodelink().click();
+		dp.clickaddnewbtn().click();
+		dp.clickuserstatuscodetxtbox().sendKeys("11111");
+		dp.clickstatusdesctextbox().sendKeys("TEST DESC");
+		dp.clickaddstatuscodebtn().click();
 	}
+	
+	@Test(priority = 47)
+	public void dbeditUserStatusCode() throws InterruptedException 
+	{
+		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
+		Thread.sleep(1000);
+		dp.clickeditbtn().click();
+		dp.clickuserstatuscodetxtbox().clear();
+		dp.clickuserstatuscodetxtbox().sendKeys("111112");
+		dp.clickstatusdesctextbox().clear();
+		dp.clickstatusdesctextbox().sendKeys("TEST DESC Edited");
+		dp.clickaddstatuscodebtn().click();
 	}
-		
-	@Test(priority = 43)
+	@Test(priority = 48)
+	public void dbDeleteUserStatusCode() throws IOException, InterruptedException
+	{
+		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
+		Thread.sleep(1000);
+		dp.clickuserstatuscodelink().click();
+		Actions act = new Actions(driver);
+		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
+		act.moveToElement(driver.findElement(By.cssSelector("#anchorDeleteButton"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(1000);
+		dp.clickcitiesdeletemodaldelbtn().click();
+		logger.info("USER STATUS CODE DELETERD");
+	}
+	
+	
+	@Test(priority = 49)
 	public void dbaddEducationalInstitute() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickeducationalinstitutionslink().click();
@@ -530,17 +598,12 @@ public class DatabaseSettings extends Base {
 		dp.clickeduaddbtn().click();
 		logger.info("New Educational Institution  added  successfully");
 		test.log(LogStatus.INFO,"New Educational Institution  added  successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Add DB Eduational Institute" + e);
-			test.log(LogStatus.ERROR, "Error in Add DB Eduational Institute");
-		}
+	
 	}
 	
-	@Test(priority = 44)
+	@Test(priority = 50)
 	public void dbeditEducationalInstitute() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
 		dp.clickeditbtn().click();
@@ -548,45 +611,134 @@ public class DatabaseSettings extends Base {
 		dp.clickedufederalein().sendKeys("111111112");
 		dp.clickeduinstitutionname().clear();
 		dp.clickeduinstitutionname().sendKeys("Updated Institute");
+		//dp.clickeduinstitutionadd().clear();
+		dp.clickeduinstitutionadd().sendKeys("7577 Updated rd");
+		dp.clickeducity().clear();
+		dp.clickeducity().sendKeys("Uptated Tracy");
+		dp.clickeduCAstate().click();
+		dp.clickeduzipcode().sendKeys("95441");
 		dp.clickeduaddbtn().click();
 		logger.info("Educational Institution editted  successfully");
 		test.log(LogStatus.INFO,"Educational Institution editted  successfully");
-		}
-		catch(Exception e) {
-			logger.error("Error in  Edit DB Eduational Institute" + e);
-			test.log(LogStatus.ERROR, "Error in Edit DB Eduational Institute");
-		}
 	}
 
-    @Test(priority = 45)
+	@Test(priority = 51)
 	public void dbDeleteEducationalInstitute() throws IOException, InterruptedException
 	{
-		try {
 		DatabaseSettingsPO dp = new DatabaseSettingsPO(driver);	
 		Thread.sleep(1000);
+		dp.clickeducationalinstitutionslink().click();
+		//WebElement frstRow = driver.findElement(By.xpath("//tr/td[text() = 'Test City Edited,CA']"));
 		Actions act = new Actions(driver);
 		act.moveToElement(dp.clickeditbtn()).moveToElement(dp.clickthreedots()).click().build().perform();
+		//dp.clickthreedots().click();
 		act.moveToElement(driver.findElement(By.cssSelector("#anchorDeleteButton"))).click().perform();
+		//WebElement delbtn = driver.findElement(By.xpath("//*[@id='action-menu']/div[2]/ul/li/text())"));
+		//dp.clickcitiesdeletebtn().click();
+		//assertTrue(dp.clickcitiesdeltitle().getText().contains("Test City Edited,CA"));
 		Thread.sleep(1000);
 		dp.clickcitiesdeletemodaldelbtn().click();
 		logger.info("Educational Institute Deleted Successfully");
 		test.log(LogStatus.INFO,"Educational Institute Deleted Successfully");
 		Thread.sleep(2000);
 		dp.clickdatabaseclosebtn().click();
-	}
-	catch(Exception e) {
-		logger.error("Error in  Delete DB Eduational Institute" + e);
-		test.log(LogStatus.ERROR, "Error in Delete DB Eduational Institute");
-	}
+
 	}	
+	
+	@BeforeClass
+	public void login() throws IOException, InterruptedException
+	{
+		driver= invokeBrowser("qa");
+		driver.get(prop.getProperty("url"));
+		logger.info("URL open-Success");
+		LogincloPO lp = new LogincloPO(driver);
+		lp.getusername().sendKeys("000334");//prop.getProperty("preparerlogin1")
+		lp.getPassword().sendKeys(prop.getProperty("preparerpass"));//prop.getProperty("preparerpswd1")
+		Thread.sleep(1000);
+		lp.clickLogin().click();
+		logger.info("Username and Password success");
+		OverviewpgPO op = new OverviewpgPO(driver);
+		Thread.sleep(1000);
+		lp.clicksecLogin().click();
+		logger.info("clicked secLogin");
+		//lp.clickmarkaspublic().click();
+		lp.clickconfirmationkey().sendKeys("abcde");
+		logger.info("Entered confirmation key");
+		lp.clickthrdcontbtn().click();
+		logger.info("clicked thirdcontbtn");
+		Thread.sleep(2000);
+	    changeto23("env",2023);//no environment used 
+		
+	}
+	
+	public void changeto23(String env,int year) throws InterruptedException, IOException
+	{
+			  
+		  test.log(LogStatus.INFO, "opened a preparer");
+		  AddaReturnpgPO ap = new AddaReturnpgPO(driver); 
+		  switchYear(year);
+		  OverviewpgPO op = new OverviewpgPO(driver);
+		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		  Thread.sleep(1000); 
+		  op.clickdashboardBtn().click();		 
+	}
+	
+public void switchYear(int year) throws IOException, InterruptedException {
+		
+		AccountSettingsPO ap = new AccountSettingsPO(driver);
+		Wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		//Wait.until(ExpectedConditions.elementToBeClickable(ap.clickaccountsdropdown()));
+		Thread.sleep(500);
+		ap.clickaccountsdropdown().click();
+		Thread.sleep(500);
+		//Wait.until(ExpectedConditions.elementToBeClickable(ap.clickswitchlink()));
+		//Wait.until(ExpectedConditions.elementToBeClickable(ap.clickswitchlink()));
+		ap.clickswitchlink().click();
+	//	Wait.until(ExpectedConditions.elementToBeClickable(ap.clickswitchselectyeardropdown()));
+		ap.clickswitchselectyeardropdown().click();
+		switch(Integer.valueOf(year))
+		{
+		case 2017:
+			ap.clickswitchoptionyear2017().click();
+			logger.info("switched to the year 2017");
+			test.log(LogStatus.INFO,"switched to the year 2017");
+			break;
+		case 2018:
+			ap.clickswitchoptionyear2018().click();
+			logger.info("switched to the year 2018");
+			test.log(LogStatus.INFO,"switched to the year 2018");
+			break;
+		case 2019:
+			ap.clickswitchoptionyear2019().click();
+			logger.info("switched to the year 2019");
+			test.log(LogStatus.INFO,"switched to the year 2019");
+			break;
+		case 2020: 
+			ap.clickswitchoptionyear2020().click();
+			logger.info("switched to the year 2020");
+			test.log(LogStatus.INFO,"switched to the year 2020");
+			break;
+		case 2021: 
+			ap.clickswitchoptionyear2021().click();
+			logger.info("switched to the year 2021");
+			test.log(LogStatus.INFO,"switched to the year 2021");
+			break;
+		}
+		
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		ap.clickswitchbtn().click();
+		
+	}
+
+	
 	
 	@AfterClass
 	public void teardown()
 	{
 	 logger.info("in tear down");
 		driver.close();
-		report.endTest(test);
-		report.flush();
+		//report.endTest(test);
+	//	report.flush();
 	} 
 }
 

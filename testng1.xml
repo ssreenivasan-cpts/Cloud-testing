@@ -2,22 +2,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite2">
 
-   <test name="testinqa">
+  <!-- <test name="testinqa">
 		<parameter name="env" value="qa" />
 		<classes>
-			<!-- <class name="clo.LoginPage" /> -->
-			<class name="clo.AccountSettings" />
-			<!-- <class name="clo.DatabaseSettings" /> -->
+			 <class name="clo.LoginPage" /> 
+			 <class name="clo.AccountSettings" />
+			 <class name="clo.DatabaseSettings" /> 
 		</classes>
-		</test> 
+		</test> -->
 		<!-- <test name="testinprod">
 		   <parameter name="env" value="prod"/> 
 		   <classes> 
-				<class name="clo.LoginPage" /> 
-				<class name="clo.AccountSettings" /> 
+				<class name="clo.LoginPage" />
+					<class name="clo.AccountSettings" /> 
 				<class name="clo.DatabaseSettings" /> 
 			</classes> 
-			</test> -->
+			</test>  -->
 
 		<!-- <test name="testindev">
 		   <parameter name="env" value="dev"/> 
@@ -27,5 +27,19 @@
 				<class name="clo.DatabaseSettings" /> 
 			</classes> 
 			</test> -->
+			<!--    <test name="QA-ADD/DELETE-PREPARER">	
+   <parameter name="env" value="qa"/>
+    <parameter name="year" value="2021"/>
+        <classes>
+        <class name="clo.AddaNewPreparer"/> 
+    </classes>
+  </test>  -->
 	
+	<test name="RTinqa">
+		   <parameter name="env" value="qa"/> 
+		    <classes> 
+				<class name="clo.ReleaseTesting" /> 
+				
+			</classes> 
+			</test>
 </suite> 

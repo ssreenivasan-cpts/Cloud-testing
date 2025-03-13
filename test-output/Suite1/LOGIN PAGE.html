@@ -1,0 +1,678 @@
+<html>
+<head>
+<title>TestNG:  LOGIN PAGE</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>LOGIN PAGE</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>6/6/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Jan 24 15:58:29 PST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>176 seconds (176298 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='clo.AccountSettings.checkImage()'><b>checkImage</b><br>Test class: clo.AccountSettings<br/>
+<a href="#Output-963751569" onClick='toggleBox("Output-963751569", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-963751569" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-963751569">
+Test started<br/>
+<br><br/>
+~Test failed~<br/>
+<a target="_blank" href=error.png>Screenshot</a><br/>
+<br><br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;acct-profile-title-bar-container&quot; id=&quot;spnProfileHeaderBar&quot;&gt;...&lt;/span&gt; is not clickable at point (1172, 32). Other element would receive the click: &lt;div class=&quot;MuiBackdrop-root-1673&quot; aria-hidden=&quot;true&quot; style=&quot;opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [176ccfaa49b72f734b3c2699f7980a18, clickElement {id=f.9F6792751D37694ED725BAD98640162D.d.B731A670DECB21724F2B948276C38A6C.e.97}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58780}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58780/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (176ccfaa49b72f734b3c2699f7980a18)] -&gt; id: spnProfileHeaderBar]
+Session ID: 176ccfaa49b72f734b3c2699f7980a18
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at clo.AccountSettings.checkImage(AccountSettings.java:256)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace963751569", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace963751569'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;acct-profile-title-bar-container&quot; id=&quot;spnProfileHeaderBar&quot;&gt;...&lt;/span&gt; is not clickable at point (1172, 32). Other element would receive the click: &lt;div class=&quot;MuiBackdrop-root-1673&quot; aria-hidden=&quot;true&quot; style=&quot;opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [176ccfaa49b72f734b3c2699f7980a18, clickElement {id=f.9F6792751D37694ED725BAD98640162D.d.B731A670DECB21724F2B948276C38A6C.e.97}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58780}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58780/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (176ccfaa49b72f734b3c2699f7980a18)] -&gt; id: spnProfileHeaderBar]
+Session ID: 176ccfaa49b72f734b3c2699f7980a18
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at clo.AccountSettings.checkImage(AccountSettings.java:256)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>1</td>
+<td>clo.AccountSettings@2ae5bd34</td></tr>
+<tr>
+<td title='clo.AccountSettings.officeAccountSettings()'><b>officeAccountSettings</b><br>Test class: clo.AccountSettings<br/>
+<a href="#Output-1632804881" onClick='toggleBox("Output-1632804881", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1632804881" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1632804881">
+Test started<br/>
+<br><br/>
+~Test failed~<br/>
+<a target="_blank" href=error.png>Screenshot</a><br/>
+<br><br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(),&apos;breadcrumb-link&apos;)]&quot;}
+  (Session info: chrome=132.0.6834.83)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [176ccfaa49b72f734b3c2699f7980a18, findElement {using=xpath, value=//span[contains(text(),&apos;breadcrumb-link&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58780}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58780/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 176ccfaa49b72f734b3c2699f7980a18
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at pageObjects.AccountSettingsPO.clickbreadcrumblinkforFirstOfc(AccountSettingsPO.java:538)
+	at clo.AccountSettings.officeAccountSettings(AccountSettings.java:247)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1632804881", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1632804881'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(),&apos;breadcrumb-link&apos;)]&quot;}
+  (Session info: chrome=132.0.6834.83)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [176ccfaa49b72f734b3c2699f7980a18, findElement {using=xpath, value=//span[contains(text(),&apos;breadcrumb-link&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58780}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58780/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 176ccfaa49b72f734b3c2699f7980a18
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at pageObjects.AccountSettingsPO.clickbreadcrumblinkforFirstOfc(AccountSettingsPO.java:538)
+	at clo.AccountSettings.officeAccountSettings(AccountSettings.java:247)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>10</td>
+<td>clo.AccountSettings@2ae5bd34</td></tr>
+<tr>
+<td title='clo.LoginPage.testChecks()'><b>testChecks</b><br>Test class: clo.LoginPage<br>Parameters: qa, 2024<br/>
+<a href="#Output-440450325" onClick='toggleBox("Output-440450325", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-440450325" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-440450325">
+Test started<br/>
+<br><br/>
+~Test failed~<br/>
+<a target="_blank" href=error.png>Screenshot</a><br/>
+<br><br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//option[text() = &apos;TPG&apos;]&quot;}
+  (Session info: chrome=132.0.6834.83)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a86d6d6e4b484e1f83efe2dcc7cdd19, findElement {using=xpath, value=//option[text() = &apos;TPG&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58654}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58654/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a86d6d6e4b484e1f83efe2dcc7cdd19
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at pageObjects.OverviewpgPO.clickchksfiltertpgbank(OverviewpgPO.java:465)
+	at clo.LoginPage.checksReadyToPrint(LoginPage.java:419)
+	at clo.LoginPage.testChecks(LoginPage.java:520)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace440450325", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace440450325'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//option[text() = &apos;TPG&apos;]&quot;}
+  (Session info: chrome=132.0.6834.83)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a86d6d6e4b484e1f83efe2dcc7cdd19, findElement {using=xpath, value=//option[text() = &apos;TPG&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58654}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58654/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a86d6d6e4b484e1f83efe2dcc7cdd19
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at pageObjects.OverviewpgPO.clickchksfiltertpgbank(OverviewpgPO.java:465)
+	at clo.LoginPage.checksReadyToPrint(LoginPage.java:419)
+	at clo.LoginPage.testChecks(LoginPage.java:520)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>21</td>
+<td>clo.LoginPage@d504137</td></tr>
+<tr>
+<td title='clo.AccountSettings.changeto23()'><b>changeto23</b><br>Test class: clo.AccountSettings</td>
+<td><div><pre>org.testng.TestNGException: 
+Cannot inject @Test annotated Method [changeto23] with [class java.lang.String, int].
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1819306533", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1819306533'><pre>org.testng.TestNGException: 
+Cannot inject @Test annotated Method [changeto23] with [class java.lang.String, int].
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:439)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:353)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:708)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:884)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:791)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>0</td>
+<td>clo.AccountSettings@2ae5bd34</td></tr>
+<tr>
+<td title='clo.AccountSettings.loginSettings()'><b>loginSettings</b><br>Test class: clo.AccountSettings<br/>
+<a href="#Output-1606420839" onClick='toggleBox("Output-1606420839", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1606420839" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1606420839">
+Test started<br/>
+<br><br/>
+~Test failed~<br/>
+<a target="_blank" href=error.png>Screenshot</a><br/>
+<br><br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#simple\-modal\-title&quot;}
+  (Session info: chrome=132.0.6834.83)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [176ccfaa49b72f734b3c2699f7980a18, findElement {using=id, value=simple-modal-title}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58780}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58780/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 176ccfaa49b72f734b3c2699f7980a18
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at pageObjects.AccountSettingsPO.clickloginsettingsgstitle(AccountSettingsPO.java:275)
+	at clo.AccountSettings.loginSettings(AccountSettings.java:233)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1606420839", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1606420839'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#simple\-modal\-title&quot;}
+  (Session info: chrome=132.0.6834.83)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [176ccfaa49b72f734b3c2699f7980a18, findElement {using=id, value=simple-modal-title}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58780}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58780/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 176ccfaa49b72f734b3c2699f7980a18
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at pageObjects.AccountSettingsPO.clickloginsettingsgstitle(AccountSettingsPO.java:275)
+	at clo.AccountSettings.loginSettings(AccountSettings.java:233)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>11</td>
+<td>clo.AccountSettings@2ae5bd34</td></tr>
+<tr>
+<td title='clo.LoginPage.checkAppointments()'><b>checkAppointments</b><br>Test class: clo.LoginPage<br>Parameters: qa, 2024<br/>
+<a href="#Output-1369840350" onClick='toggleBox("Output-1369840350", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1369840350" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1369840350">
+Test started<br/>
+<br><br/>
+~Test failed~<br/>
+<a target="_blank" href=error.png>Screenshot</a><br/>
+<br><br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#btnSideBar6&quot;}
+  (Session info: chrome=132.0.6834.83)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a86d6d6e4b484e1f83efe2dcc7cdd19, findElement {using=id, value=btnSideBar6}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58654}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58654/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a86d6d6e4b484e1f83efe2dcc7cdd19
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at pageObjects.OverviewpgPO.clickcalendariconbtn(OverviewpgPO.java:237)
+	at clo.LoginPage.createNewAppointment(LoginPage.java:216)
+	at clo.LoginPage.checkAppointments(LoginPage.java:499)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1369840350", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1369840350'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#btnSideBar6&quot;}
+  (Session info: chrome=132.0.6834.83)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;CA2-WV-QA06&apos;, ip: &apos;10.1.1.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a86d6d6e4b484e1f83efe2dcc7cdd19, findElement {using=id, value=btnSideBar6}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\SSREEN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58654}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58654/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a86d6d6e4b484e1f83efe2dcc7cdd19
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at pageObjects.OverviewpgPO.clickcalendariconbtn(OverviewpgPO.java:237)
+	at clo.LoginPage.createNewAppointment(LoginPage.java:216)
+	at clo.LoginPage.checkAppointments(LoginPage.java:499)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>20</td>
+<td>clo.LoginPage@d504137</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='clo.AccountSettings.captureSignature()'><b>captureSignature</b><br>Test class: clo.AccountSettings<br/>
+<a href="#Output-593403007" onClick='toggleBox("Output-593403007", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-593403007" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-593403007">
+Test started<br/>
+<br><br/>
+Test Passed<br/>
+</div>
+</td>
+<td></td>
+<td>8</td>
+<td>clo.AccountSettings@2ae5bd34</td></tr>
+<tr>
+<td title='clo.LoginPage.checkLogin()'><b>checkLogin</b><br>Test class: clo.LoginPage<br>Parameters: qa, 2024<br/>
+<a href="#Output-1842380391" onClick='toggleBox("Output-1842380391", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1842380391" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1842380391">
+Test started<br/>
+<br><br/>
+Test Passed<br/>
+</div>
+</td>
+<td></td>
+<td>13</td>
+<td>clo.LoginPage@d504137</td></tr>
+<tr>
+<td title='clo.AccountSettings.changePasswordCancel()'><b>changePasswordCancel</b><br>Test class: clo.AccountSettings<br/>
+<a href="#Output-1394126848" onClick='toggleBox("Output-1394126848", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1394126848" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1394126848">
+Test started<br/>
+<br><br/>
+Test Passed<br/>
+</div>
+</td>
+<td></td>
+<td>4</td>
+<td>clo.AccountSettings@2ae5bd34</td></tr>
+<tr>
+<td title='clo.AccountSettings.toggleTrainingMode()'><b>toggleTrainingMode</b><br>Test class: clo.AccountSettings<br/>
+<a href="#Output-78136658" onClick='toggleBox("Output-78136658", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-78136658" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-78136658">
+Test started<br/>
+<br><br/>
+Test Passed<br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>clo.AccountSettings@2ae5bd34</td></tr>
+<tr>
+<td title='clo.LoginPage.checkMessages()'><b>checkMessages</b><br>Test class: clo.LoginPage<br>Parameters: qa, 2024<br/>
+<a href="#Output-13618724" onClick='toggleBox("Output-13618724", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-13618724" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-13618724">
+Test started<br/>
+<br><br/>
+Test Passed<br/>
+</div>
+</td>
+<td></td>
+<td>61</td>
+<td>clo.LoginPage@d504137</td></tr>
+<tr>
+<td title='clo.AccountSettings.toggleTrainingModeOff()'><b>toggleTrainingModeOff</b><br>Test class: clo.AccountSettings<br/>
+<a href="#Output-185001179" onClick='toggleBox("Output-185001179", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-185001179" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-185001179">
+Test started<br/>
+<br><br/>
+Test Passed<br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>clo.AccountSettings@2ae5bd34</td></tr>
+</table><p>
+</body>
+</html>
