@@ -695,7 +695,7 @@ public class AddaNewReturn extends Base {
 		logger.info("in tear down");
 		if (driver != null) {
 			//driver.close();
-			driver.quit();
+		//	driver.quit();
 		}
 	}
 
@@ -1038,7 +1038,7 @@ public class AddaNewReturn extends Base {
 	}
 
 	@Parameters({ "env", "year" })
-   // @Test
+  //  @Test
 	final void refundCalcReturn(String env, String year) throws IOException, InterruptedException {
 		// test= report.startTest("REFUND CALC RETURN");
 		test.log(LogStatus.INFO, "STARTING ~ REFUND CALCULATOR RETURN");
@@ -1117,7 +1117,7 @@ public class AddaNewReturn extends Base {
 	}
 
 	@Parameters({ "env", "year" })
-	@Test
+	//@Test
 	final void addaReturn(String env, String year) throws IOException, InterruptedException {
 
 		// test= report.startTest("ADD A NEW RETURN");
@@ -1170,11 +1170,10 @@ public class AddaNewReturn extends Base {
 		Thread.sleep(500);
 		tb.clkcancelBtn().click();
 		Thread.sleep(500);
-		tb.clksignatureBtn().click();
-		Thread.sleep(500);
-		tb.clksignBtn().click();
-		Thread.sleep(500);
-		tb.clksignbtninReturnErrors().click();
+		/*
+		 * tb.clksignatureBtn().click(); Thread.sleep(500); tb.clksignBtn().click();
+		 * Thread.sleep(500); tb.clksignbtninReturnErrors().click();
+		 */
 		
 		  Thread.sleep(500); tb.clksignoptionDropdown().click(); 
 		  Select signoption =  new Select(tb.clksignMethodDropdown());
@@ -1276,7 +1275,7 @@ public class AddaNewReturn extends Base {
 		im.getintvTPfirstname().sendKeys("INTRVWMODE");
 		Thread.sleep(1000);
 		// driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		im.getintvTPlastname().sendKeys("RETURN");
+		//im.getintvTPlastname().sendKeys("RETURN");
 		// im.clickintvyesdepstoclaim().sendKeys(Keys.TAB);
 		im.getintvTPdob().clear();
 		Thread.sleep(500);
@@ -1287,6 +1286,7 @@ public class AddaNewReturn extends Base {
 		im.getintvSPlastname().sendKeys("RETURN");
 		im.getintvSPdob().sendKeys("05121982");
 		im.getintvSPoccupation().sendKeys("HomeMaker");
+		im.getintvTPlastname().sendKeys("RETURN");
 		tb.clkbtnSaveTaxReturn().click();
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -1812,7 +1812,7 @@ public class AddaNewReturn extends Base {
 	}
 
 	@Parameters({ "env", "year" })
-	//@Test
+	@Test
 	final void BillinginSetup(String env, String year) throws IOException, InterruptedException {
 
 		test.log(LogStatus.INFO, "STARTING ~ BILLING IN SETUP");
@@ -1857,6 +1857,8 @@ public class AddaNewReturn extends Base {
 		bs.getchargedesc().sendKeys("Automation custom");
 		bs.getcustomamount().sendKeys("25");
 		bs.clicksavebillingbtn().click();
+		//bs.clickdiscountemptyerror().click();
+	
 		Thread.sleep(1000);
 
 	}

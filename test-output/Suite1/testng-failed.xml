@@ -12,11 +12,11 @@
     <classes>
       <class name="clo.AddaNewReturn">
         <methods>
-          <include name="addaReturn" invocation-numbers="0"/>
           <include name="endReports"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="startReports"/>
+          <include name="BillinginSetup" invocation-numbers="0"/>
         </methods>
       </class> <!-- clo.AddaNewReturn -->
     </classes>

@@ -14,12 +14,6 @@
       <![CDATA[<br>]]>
     </line>
     <line>
-      <![CDATA[STARTING ADDARETURN]]>
-    </line>
-    <line>
-      <![CDATA[<br>]]>
-    </line>
-    <line>
       <![CDATA[opened a preparer-1]]>
     </line>
     <line>
@@ -29,28 +23,22 @@
       <![CDATA[<br>]]>
     </line>
     <line>
-      <![CDATA[addW2]]>
-    </line>
-    <line>
-      <![CDATA[frm8879]]>
-    </line>
-    <line>
-      <![CDATA[verifyareturn-5]]>
+      <![CDATA[opened a preparer-1]]>
     </line>
     <line>
       <![CDATA[Test Passed]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-03-13T07:33:34 PDT" name="Suite1" finished-at="2025-03-13T07:36:06 PDT" duration-ms="151782">
+  <suite started-at="2025-03-18T09:18:54 PDT" name="Suite1" finished-at="2025-03-18T09:19:41 PDT" duration-ms="47182">
     <groups>
     </groups>
-    <test started-at="2025-03-13T07:33:34 PDT" name="QA-ADDARETURN" finished-at="2025-03-13T07:36:06 PDT" duration-ms="151782">
+    <test started-at="2025-03-18T09:18:54 PDT" name="QA-ADDARETURN" finished-at="2025-03-18T09:19:41 PDT" duration-ms="47182">
       <class name="clo.AddaNewReturn">
-        <test-method is-config="true" signature="startReports()[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-13T07:33:34 PDT" name="startReports" finished-at="2025-03-13T07:33:34 PDT" duration-ms="131" status="PASS">
+        <test-method is-config="true" signature="startReports()[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-18T09:18:54 PDT" name="startReports" finished-at="2025-03-18T09:18:54 PDT" duration-ms="124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReports -->
-        <test-method is-config="true" signature="login(java.lang.String,java.lang.String)[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-13T07:33:34 PDT" name="login" finished-at="2025-03-13T07:33:45 PDT" duration-ms="11689" status="PASS">
+        <test-method is-config="true" signature="login(java.lang.String,java.lang.String)[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-18T09:18:54 PDT" name="login" finished-at="2025-03-18T09:19:05 PDT" duration-ms="11535" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -66,7 +54,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="addaReturn(java.lang.String,java.lang.String)[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-13T07:33:45 PDT" name="addaReturn" finished-at="2025-03-13T07:36:05 PDT" duration-ms="139194" status="PASS">
+        <test-method signature="BillinginSetup(java.lang.String,java.lang.String)[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-18T09:19:05 PDT" name="BillinginSetup" finished-at="2025-03-18T09:19:41 PDT" duration-ms="35597" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -87,12 +75,6 @@
               <![CDATA[<br>]]>
             </line>
             <line>
-              <![CDATA[STARTING ADDARETURN]]>
-            </line>
-            <line>
-              <![CDATA[<br>]]>
-            </line>
-            <line>
               <![CDATA[opened a preparer-1]]>
             </line>
             <line>
@@ -102,20 +84,14 @@
               <![CDATA[<br>]]>
             </line>
             <line>
-              <![CDATA[addW2]]>
-            </line>
-            <line>
-              <![CDATA[frm8879]]>
-            </line>
-            <line>
-              <![CDATA[verifyareturn-5]]>
+              <![CDATA[opened a preparer-1]]>
             </line>
             <line>
               <![CDATA[Test Passed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- addaReturn -->
-        <test-method is-config="true" signature="closeBrowser(java.lang.String)[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-13T07:36:05 PDT" name="closeBrowser" finished-at="2025-03-13T07:36:06 PDT" duration-ms="865" status="PASS">
+        </test-method> <!-- BillinginSetup -->
+        <test-method is-config="true" signature="closeBrowser(java.lang.String)[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-18T09:19:41 PDT" name="closeBrowser" finished-at="2025-03-18T09:19:41 PDT" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -126,7 +102,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="endReports()[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-13T07:36:06 PDT" name="endReports" finished-at="2025-03-13T07:36:06 PDT" duration-ms="335" status="PASS">
+        <test-method is-config="true" signature="endReports()[pri:0, instance:clo.AddaNewReturn@3db1ce78]" started-at="2025-03-18T09:19:41 PDT" name="endReports" finished-at="2025-03-18T09:19:41 PDT" duration-ms="332" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReports -->

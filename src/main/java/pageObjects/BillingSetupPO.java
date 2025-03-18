@@ -17,25 +17,26 @@ public class BillingSetupPO {
  By cancelbtn = By.id("btnCancelGenBillingSetup");//Cancel btn at the bottom
  By savebillingbtn = By.id("btnSaveBillingSetup");//Save btn at the bottom
  By saveandnextbtn = By.id("btnNextBillingSetup");// save&next btn at the bottom 
+ By discountemptyerror = By.id("btnHideSettingsError"); //when no discount code is entered
  //-----------------------------Form Billing-------------------------------------------------------------------------
  By addformbtn = By.id("btnAddForm+");// AddForm+ button
  //By formbaseqty = By.id("bqty-15338");// BaseQTY text box
  //By formbaseprice = By.id("bprice-15338");// Base Price text box 
  //By formperitem = By.id("bpriceperrow0");// Per item text box bpriceper-18335
- By RetSch4peritem = By.id("bpriceper-31239"); //per item for sch3 //new
- By addbtninselectform = By.id("btnUpdateBillingState"); //add in form by billing //new
+ By RetSch4peritem = By.id("bpriceper-92710"); //per item for 8949 //new
+ By addbtninselectform = By.id("btnUpdateBillingState"); //add in form by billing //new 
  By formbillingperitem = By.xpath("//*[@id='txtFormPerItem0']"); //for reload billing txtFormPerItem0
  By itemizedchargeinareturn = By.id("BB0100"); //after reload billing, check here to confirm
   //------------------------------Worksheet Billing------------------------------------------------------------------
  By addworksheetbtn = By.id("btnAddWorksheet+");// Add Worksheet+ bbutton
- By ret1040peritem = By.id("bpriceper-33542"); //ret1040in worksheet //new
+ By ret1040peritem = By.id("bpriceper-95122"); //ret1040in worksheet //new
  By addbtninWorksheet = By.id("btnUpdateBillingState"); //addinworksheet //new
  By wrkshtbaseqty = By.id("txtFormBaseQty2");// baseQTY txt box in worksheet modal
  By wrkshtbaseprice = By.id("txtFormBasePrice2");// base price in worksheet
  By wrkshtperitem = By.id("bpriceper-17461");//per item in worksheet
  //-------------------------------Line Item Billing------------------------------------------------------- 
  By addlineitemsbtn = By.id("btnAddLineItems+");//add lineitems+ btn
- By ret1040perlineitem = By.id("bpriceper-32417"); //lineitems 1040 //new
+ By ret1040perlineitem = By.id("bpriceper-93949"); //lineitems 1040 //new
  By addbtninlineitem = By.id("btnUpdateBillingState"); //add in linebtn //new
  By lineitemsbaseqty = By.id("bqty-16389");// base qty 
  By lineitemsbaseprice = By.id("bprice-16389");//base price
@@ -44,10 +45,11 @@ public class BillingSetupPO {
  By disaddrowbtn = By.id("btnAddRowBillingDiscounts");// Add row+ btn in discounts  
  By discountcode = By.id("txtDiscountCode0");// discount code text box
  By disamount = By.id("txtDiscountAmt0");//amount in discounts
+ By disdeleterowbtn = By.id("btnDeleteRowDiscount");//cross for delete btn 
  //---------------------------------Custom Charges----------------------------------------------------
  By customaddrowbtn = By.id("btnAddRowCustomChanges");// add row+ btn in custom charges
- By chargedesc = By.id("txtChargeDesc0");// charge description txt box
- By customamount = By.id("txtChargeAmt0");//Amount in custom Charges
+ By chargedesc = By.id("txtChargeDesc1");// charge description txt box txtChargeDesc1
+ By customamount = By.id("txtChargeAmt1");//Amount in custom Charges
  //---------------------------------Close-------------------------------------------------------------
  By billingsetupclosebtn = By.id("btnSaveAndCloseSettingsProfile");//close button in billingsetup
  //------------------------------ Billing--------------------------------------------------------------------------
@@ -83,6 +85,10 @@ public WebElement clicksaveandnextbtn()
 	{
 	return driver.findElement(saveandnextbtn);
 	}
+public WebElement clickdiscountemptyerror()
+{
+return driver.findElement(discountemptyerror);
+}
 //----------------------------------Form Billing----------------------------------------
  public WebElement clickaddformbtn()
 	{
@@ -181,6 +187,11 @@ public WebElement clicksaveandnextbtn()
  public WebElement getdisamount()
 	{
 		return driver.findElement(disamount);
+	}
+ 
+ public WebElement getdisdeleterowbtn()
+	{
+		return driver.findElement(disdeleterowbtn);
 	}
  //-----------------------------------Custom Charges---------------------------------------------------------
  public WebElement clickcustomaddrowbtn()
